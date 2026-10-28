@@ -1,0 +1,142 @@
+.Checking{
+  text-align: center;
+  color: #cf5c5c;
+  width: 100%
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: #2a2a2a;
+  color: #1f1f1f;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* center vertically */
+  min-height: 100vh; /* ensure body fills viewport */
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.main-header {
+  background-color: #999999;
+  color: #1f1f1f;
+  width: 900px;
+  min-height: 10vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* centered by body flexbox, remove top margin */
+  margin: 0;
+  border-radius: 8px;
+  padding: 20px 10px;
+  overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.TitleStrip {
+  border-radius: 5px;
+  background-color: #808281;
+  color: rgb(254, 254, 254);
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 5px;
+  padding-left: 10px;
+  font-weight: bold;
+  border-bottom: 1px solid #000000;
+}
+
+.ArchiveList {
+  background-color: #e1e1e1;
+  color: #1f1f1f;
+  height: 200px;
+  padding-left: 10px;
+  overflow-y: scroll;
+}
+
+.ArchiveItem {
+  color: #1f1f1f;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-bottom: 1px solid #636363;
+}
+.ArchiveItem:hover {
+  background-color: #95b7a5;
+  cursor: pointer;
+  transition: background-color 150ms ease-in-out;
+}
+
+.ModalOverlay {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  
+}
+
+.ModalContent {
+  background-color: rgb(255, 253, 253);
+  color: #1f1f1f;
+  font-size: x-large;
+  padding: 0; /* move padding to ModalBody so ModalContent can size to overlay */
+  position: relative; /* anchor absolute-positioned children (like the close button) */
+  border-radius: 8px;
+  width: 100%; /* fill overlay width */
+  height: 100%; /* fill overlay height */
+  max-height: 80vh;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  pointer-events: auto; /* keeps modal interactive */
+  z-index: 1000;
+}
+
+.close-button {
+  position: absolute;
+  color: rgb(110, 192, 114);
+  background-color: #3e323200;
+  top: 0px;
+  right: 10px;
+  padding: 2px 6px;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1010; /* ensure it sits above modal content */
+}
+.close-button:hover {
+  color: white;
+}
+
+.close-button:focus {
+  outline: none;
+  color: rgb(62, 249, 133);
+  outline-offset: 1px;
+  border-radius: 0px;
+}
+
+.ResizeEdge {
+  width: 14px;
+  height: 14px;
+  background: rgba(0,0,0,0.15);
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  cursor: se-resize;
+  border-radius: 2px;
+}
